@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bauhaus-yellow: #FFD700;
+  --bauhaus-red: #FF1744;
+  --bauhaus-blue: #00B0FF;
+  --bauhaus-green: #00E676;
+  --bauhaus-orange: #FF6F00;
+  --bauhaus-purple: #7C4DFF;
+  --brutal-black: #000000;
+  --brutal-white: #FFFFFF;
+  --brutal-gray: #2C2C2C;
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--brutal-black);
+  color: var(--brutal-white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brutal-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bauhaus-yellow);
+  border: 2px solid var(--brutal-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bauhaus-orange);
+}
