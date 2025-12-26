@@ -88,7 +88,7 @@ function App() {
           fontSize: '1.2rem', 
           textAlign: 'center', 
           marginBottom: '3rem',
-          color: 'var(--brutal-white)'
+          color: 'var(--brutal-black)'
         }}>
           Relive the memories from our amazing board game sessions!
         </p>
