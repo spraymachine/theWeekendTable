@@ -6,14 +6,14 @@
 
 :root {
   --bauhaus-yellow: #FFD700;
-  --bauhaus-red: #FF1744;
-  --bauhaus-blue: #00B0FF;
-  --bauhaus-green: #00E676;
-  --bauhaus-orange: #FF6F00;
-  --bauhaus-purple: #7C4DFF;
+  --bauhaus-red: #FF5757;
+  --bauhaus-blue: #1FA89F;
+  --bauhaus-green: #1FA89F;
+  --bauhaus-orange: #FF5757;
+  --bauhaus-purple: #1FA89F;
   --brutal-black: #000000;
   --brutal-white: #FFFFFF;
-  --brutal-gray: #2C2C2C;
+  --brutal-gray: #F5F5F5;
 }
 
 body {
