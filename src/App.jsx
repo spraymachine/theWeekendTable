@@ -28,6 +28,18 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="hero">
+        <div className="lines">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
         <div className="hero-content">
           <h1 className="hero-title">THE WEEKEND TABLE</h1>
           <h2 className="hero-subtitle">Board Game Events</h2>
