@@ -48,7 +48,7 @@ html, body {
 .nav-logo:hover {
   background: var(--bauhaus-yellow);
   color: var(--brutal-black);
-  transform: rotate(-2deg);
+  transform: translateY(-2px);
 }
 
 .nav-links {
@@ -254,8 +254,8 @@ html, body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 4px 4px 0 var(--bauhaus-blue);
-  transform: rotate(-1deg);
+  text-shadow: none;
+  transform: none;
 }
 
 .hero-subtitle {
@@ -269,7 +269,7 @@ html, body {
   padding: 1rem 2rem;
   display: inline-block;
   background: var(--brutal-black);
-  transform: rotate(1deg);
+  transform: none;
 }
 
 .hero-description {
@@ -357,11 +357,10 @@ html, body {
   padding: 2rem;
   position: relative;
   transition: all 0.3s ease;
-  transform: rotate(-1deg);
+  transform: none;
 }
 
 .event-card:nth-child(even) {
-  transform: rotate(1deg);
   border-color: var(--bauhaus-blue);
 }
 
@@ -370,7 +369,7 @@ html, body {
 }
 
 .event-card:hover {
-  transform: rotate(0deg) scale(1.05);
+  transform: translateY(-6px);
   box-shadow: 12px 12px 0 var(--bauhaus-blue);
   border-color: var(--bauhaus-blue);
 }
@@ -438,28 +437,25 @@ html, body {
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease;
-  transform: rotate(-1deg);
+  transform: none;
   display: flex;
   flex-direction: column;
 }
 
 .gallery-item:nth-child(2n) {
-  transform: rotate(1deg);
   border-color: var(--bauhaus-red);
 }
 
 .gallery-item:nth-child(3n) {
-  transform: rotate(-0.5deg);
   border-color: var(--bauhaus-yellow);
 }
 
 .gallery-item:nth-child(4n) {
-  transform: rotate(0.5deg);
   border-color: var(--bauhaus-blue);
 }
 
 .gallery-item:hover {
-  transform: rotate(0deg) scale(1.03);
+  transform: translateY(-6px);
   box-shadow: 10px 10px 0 var(--bauhaus-purple);
   border-width: 8px;
   z-index: 10;
@@ -606,7 +602,7 @@ html, body {
   background: var(--bauhaus-blue);
   border: 12px solid var(--bauhaus-yellow);
   position: relative;
-  transform: rotate(5deg);
+  transform: rotate(2deg);
   display: flex;
   align-items: center;
   justify-content: center;
