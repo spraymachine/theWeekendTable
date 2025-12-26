@@ -94,7 +94,7 @@ function App() {
 
       {/* Past Events Gallery Section */}
       <section id="gallery" className="section gallery">
-        <h2 className="section-title">Past Events Gallery</h2>
+        <h2 className="section-title">Past Events</h2>
         <p style={{ 
           fontFamily: 'Orbitron', 
           fontSize: '1.2rem', 
@@ -135,7 +135,7 @@ function App() {
               <p className="gallery-description">Crowning the ultimate board game champions!</p>
             </div>
           </div>
-          <div className="gallery-item">
+          <div className="gallery-item gallery-item-tall">
             <div className="gallery-image">
               <div className="gallery-placeholder">🎯</div>
             </div>
