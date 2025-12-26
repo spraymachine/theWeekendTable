@@ -1,15 +1,28 @@
+import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <div className="app">
       {/* Navigation */}
       <nav className="nav">
         <a href="#home" className="nav-logo">THE WEEKEND TABLE</a>
-        <ul className="nav-links">
-          <li><a href="#events" className="nav-link">Events</a></li>
-          <li><a href="#about" className="nav-link">About</a></li>
-          <li><a href="#contact" className="nav-link">Contact</a></li>
+        <button
+          className={`hamburger ${isMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+          <li><a href="#events" className="nav-link" onClick={() => setIsMenuOpen(false)}>Events</a></li>
+          <li><a href="#gallery" className="nav-link" onClick={() => setIsMenuOpen(false)}>Gallery</a></li>
+          <li><a href="#about" className="nav-link" onClick={() => setIsMenuOpen(false)}>About</a></li>
+          <li><a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
         </ul>
       </nav>
 
@@ -64,6 +77,112 @@ function App() {
               Learn More
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Past Events Gallery Section */}
+      <section id="gallery" className="section gallery">
+        <h2 className="section-title">Past Events Gallery</h2>
+        <p style={{ 
+          fontFamily: 'Orbitron', 
+          fontSize: '1.2rem', 
+          textAlign: 'center', 
+          marginBottom: '3rem',
+          color: 'var(--brutal-white)'
+        }}>
+          Relive the memories from our amazing board game sessions!
+        </p>
+        <div className="gallery-grid">
+          <div className="gallery-item">
+            <div className="gallery-image">
+              <div className="gallery-placeholder">🎲</div>
+            </div>
+            <div className="gallery-info">
+              <div className="gallery-date">February 24, 2024</div>
+              <h3 className="gallery-title">Epic Strategy Showdown</h3>
+              <p className="gallery-description">Intense battles and strategic masterminds!</p>
+            </div>
+          </div>
+          <div className="gallery-item gallery-item-large">
+            <div className="gallery-image">
+              <div className="gallery-placeholder">🎮</div>
+            </div>
+            <div className="gallery-info">
+              <div className="gallery-date">February 17, 2024</div>
+              <h3 className="gallery-title">Family Game Night</h3>
+              <p className="gallery-description">Laughter, fun, and unforgettable moments with families!</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <div className="gallery-image">
+              <div className="gallery-placeholder">🏆</div>
+            </div>
+            <div className="gallery-info">
+              <div className="gallery-date">February 10, 2024</div>
+              <h3 className="gallery-title">Tournament Champions</h3>
+              <p className="gallery-description">Crowning the ultimate board game champions!</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <div className="gallery-image">
+              <div className="gallery-placeholder">🎯</div>
+            </div>
+            <div className="gallery-info">
+              <div className="gallery-date">February 3, 2024</div>
+              <h3 className="gallery-title">New Game Launch</h3>
+              <p className="gallery-description">Discovering exciting new board games together!</p>
+            </div>
+          </div>
+          <div className="gallery-item gallery-item-tall">
+            <div className="gallery-image">
+              <div className="gallery-placeholder">🎪</div>
+            </div>
+            <div className="gallery-info">
+              <div className="gallery-date">January 27, 2024</div>
+              <h3 className="gallery-title">Game Festival</h3>
+              <p className="gallery-description">A full day of gaming, food, and community spirit!</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <div className="gallery-image">
+              <div className="gallery-placeholder">🎨</div>
+            </div>
+            <div className="gallery-info">
+              <div className="gallery-date">January 20, 2024</div>
+              <h3 className="gallery-title">Creative Games Night</h3>
+              <p className="gallery-description">Artistic and creative board games showcase!</p>
+            </div>
+          </div>
+          <div className="gallery-item gallery-item-wide">
+            <div className="gallery-image">
+              <div className="gallery-placeholder">🌟</div>
+            </div>
+            <div className="gallery-info">
+              <div className="gallery-date">January 13, 2024</div>
+              <h3 className="gallery-title">Anniversary Celebration</h3>
+              <p className="gallery-description">Celebrating one year of amazing board game events!</p>
+            </div>
+          </div>
+          <div className="gallery-item">
+            <div className="gallery-image">
+              <div className="gallery-placeholder">⚔️</div>
+            </div>
+            <div className="gallery-info">
+              <div className="gallery-date">January 6, 2024</div>
+              <h3 className="gallery-title">Medieval Games</h3>
+              <p className="gallery-description">Knights, castles, and epic medieval adventures!</p>
+            </div>
+          </div>
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <a 
+            href="https://www.instagram.com/the.weekend.table?igsh=YW96MWhzc2p3a3ow" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="gallery-cta"
+          >
+            View More on Instagram
+          </a>
         </div>
       </section>
 
