@@ -1,8 +1,31 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [dieValue, setDieValue] = useState(1)
+  const [isDieRolling, setIsDieRolling] = useState(false)
+  const dieTimeoutsRef = useRef([])
+
+  useEffect(() => {
+    return () => {
+      dieTimeoutsRef.current.forEach((t) => clearTimeout(t))
+      dieTimeoutsRef.current = []
+    }
+  }, [])
+
+  const dieGlyph = (value) => (['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'][value - 1] ?? '⚀')
+
+  const rollDie = () => {
+    if (isDieRolling) return
+
+    setIsDieRolling(true)
+
+    const next = 1 + Math.floor(Math.random() * 6)
+    // Swap the face mid-animation so it “lands” after a roll.
+    dieTimeoutsRef.current.push(setTimeout(() => setDieValue(next), 420))
+    dieTimeoutsRef.current.push(setTimeout(() => setIsDieRolling(false), 900))
+  }
 
   return (
     <div className="app">
@@ -87,8 +110,8 @@ function App() {
             </p>
             <a href="https://www.instagram.com/the.weekend.table" target="_blank" rel="noopener noreferrer" className="event-link">
               Learn More
-            </a>
-          </div>
+        </a>
+      </div>
         </div>
       </section>
 
@@ -218,8 +241,16 @@ function App() {
               is a new adventure!
             </p>
           </div>
-          <div className="about-shape"></div>
-        </div>
+          <button
+            type="button"
+            className={`about-die ${isDieRolling ? 'rolling' : ''}`}
+            onClick={rollDie}
+            aria-label={`Roll the dice. Current value: ${dieValue}`}
+          >
+            <span className="die-face" aria-hidden="true">{dieGlyph(dieValue)}</span>
+            <span className="die-hint" aria-hidden="true">Tap to roll</span>
+          </button>
+      </div>
       </section>
 
       {/* Contact Section */}
@@ -250,7 +281,18 @@ function App() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2024 The Weekend Table. All rights reserved. | Roll for initiative!</p>
+        <a
+          href="https://manidodla.xyz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-card"
+        >
+          <div className="footer-card-left">
+            <span className="footer-label">Designed by</span>
+            <span className="footer-name">Mani Dodla</span>
+          </div>
+          
+        </a>
       </footer>
     </div>
   )
